@@ -1,36 +1,45 @@
-// 1 + i
+import 'lectures/05.abstract.dart';
 
-// Class
-class Complex {
-  num real;
-  num imaginary;
-  Complex({
-    required this.real,
-    required this.imaginary,
-  });
+void main(List<String> arguments) {
+  // Car carA = Car(numOfMirror: 2, color: "grey", numOfSeats: 5, numOftires: 4);
 
-  @override
-  String toString() => 'Complex(real: $real, imaginary: ${imaginary}i)';
+  // Trialer trialerA = Trialer(color: "yellow", numOfSeats: 3, numOftires: 12);
 
+  Corolla corolla =
+      Corolla(numOfMirror: 2, color: "grey", numOfSeats: 5, numOftires: 4);
 
-  Complex operator +(Complex other) {
-    num newReal = real + other.real;
-    num newImaginary = imaginary + other.imaginary;
+  corolla.start();
 
-    return Complex(real: newReal, imaginary: newImaginary);
-  }
+  // xRepair(carA); // Repair the car
+  // yRepair(trialerA); // Repair the trialer
+
+  // zRepair(carA); // Repair car
+  // zRepair(trialerA); // Repair Trialer
 }
 
-void main(List<String> arguments) async {
-  Complex complex1 = Complex(real: 12, imaginary: 5);
-  Complex complex2 = Complex(real: 1, imaginary: 1);
+// Fix car problem
+void xRepair(Car car) {
+  car.start();
+  print("Fixing the car");
+}
 
-  // class of String
+void yRepair(Trialer trialer) {
+  trialer.start();
+  print("Fixing the trialer");
+}
 
-  print(complex1 == complex2);
+void zRepair(Vechicle vechicle) {
+  vechicle.start();
+  print("Fixing the vechile");
 
-  print(complex1);
-  print(complex2);
+  // Time to make payment
+  if (vechicle is Trialer) {
+    print("Payment is \$300");
+  }
+
+  if (vechicle is Car) {
+    print("Payment is  \$100");
+  }
 }
 
 // Class
@@ -46,5 +55,5 @@ void main(List<String> arguments) async {
 // encapsulation
 
 // Polymorphism
-// abstract
+// abstract  [*]
 // mixins
